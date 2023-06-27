@@ -1,7 +1,28 @@
 Rails.application.routes.draw do
+  get 'organizations/index'
+  get 'organizations/show'
+  get 'organizations/new'
+  get 'organizations/create'
+  get 'organizations/edit'
+  get 'organizations/update'
+  get 'organizations/destroy'
+    get 'associas/index'
+    get 'associas/show'
+    get 'associas/new'
+    get 'associas/create'
+    get 'associas/edit'
+    get 'associas/update'
+    get 'associas/destroy'
+    get 'associa/index'
+    get 'associa/show'
+    get 'associa/new'
+    get 'associa/create'
+    get 'associa/edit'
+    get 'associa/update'
+    get 'associa/destroy'
   devise_for :users
   root to: "pages#home"
-  resources :associations do
+  resources :associas do
     resources :events, only: [:destroy]
     resources :articles, only: [:destroy]
   end
