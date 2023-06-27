@@ -11,23 +11,23 @@ a, a:visited, a:active {
 }
 
 a:hover {
-    color: #ffa600;
+    color: #874C62;
 }
 
 main {
-    margin: 20vh auto;
+    margin: 5vh auto;
     text-align: center;
 }
 
 
 footer {
-    background-color: #212121;
-    color: #dfdfdf;
+    background-color: #F2D388;
+    color: #000000;
     padding: 30px 100px;
 }
 
 footer h3 {
-    color: white;
+    color: #000000;
 }
 
 .footer-top {
@@ -130,6 +130,6 @@ a.social:not(:last-child) {
     }
     .footer-middle {
         text-align: left;
-        
+
     }
 }
