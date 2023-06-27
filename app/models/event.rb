@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-  belongs_to :association
-  belongs_to :article
-  has_many :participations
+  belongs_to :organization
+  has_many :articles
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_27_130718) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_140551) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_130718) do
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "event_id", null: false
+    t.index ["event_id"], name: "index_articles_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -28,10 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_130718) do
     t.text "description"
     t.date "date"
     t.bigint "organization_id", null: false
-    t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_events_on_article_id"
     t.index ["organization_id"], name: "index_events_on_organization_id"
   end
 
@@ -69,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_130718) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "articles"
+  add_foreign_key "articles", "events"
   add_foreign_key "events", "organizations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
