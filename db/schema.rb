@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_27_124436) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_130718) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +22,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_124436) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "associas", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
+    t.string "address"
+    t.string "title"
+    t.text "description"
+    t.date "date"
+    t.bigint "organization_id", null: false
+    t.bigint "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_events_on_article_id"
+    t.index ["organization_id"], name: "index_events_on_organization_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.string "category"
     t.string "email"
@@ -32,19 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_124436) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "events", force: :cascade do |t|
-    t.string "address"
-    t.string "title"
-    t.text "description"
-    t.date "date"
-    t.bigint "associa_id", null: false
-    t.bigint "article_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_events_on_article_id"
-    t.index ["associa_id"], name: "index_events_on_associa_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_124436) do
   end
 
   add_foreign_key "events", "articles"
-  add_foreign_key "events", "associas"
+  add_foreign_key "events", "organizations"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
 end
