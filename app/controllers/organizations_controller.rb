@@ -1,5 +1,12 @@
 class OrganizationsController < ApplicationController
   def index
+    if params[:query]
+      @organizations = Organization.search_by_organization(params[:query])
+    else
+      @organizations = Organization.all
+    end
+    params[:query] = ""
+    
   end
 
   def show
