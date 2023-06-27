@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_27_104801) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_122430) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_104801) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "associations", force: :cascade do |t|
+  create_table "associas", force: :cascade do |t|
     t.string "name"
     t.string "category"
     t.string "email"
@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_104801) do
   end
 
   add_foreign_key "events", "articles"
-  add_foreign_key "events", "associations"
+  add_foreign_key "events", "associas", column: "association_id"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
 end
