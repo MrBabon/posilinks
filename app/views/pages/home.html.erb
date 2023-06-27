@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+                <% if user_signed_in? %>
+                    <h2>Bienvenue <%= current_user.nickname %> !</h2>
+                    <p>Vous voulez donner votre temps à une bonne cause ?</p>
+                    <br>
+                    <p>Vous souhaitez contacter des associations locales et participer à des événements ?</p>
+                    <br>
+                    <p>Posilink est là pour vous !</p>
+                    <br>
+                    <div class="d-flex">
+                      <%= link_to associations_path, class:"button" do %>
+                            <div class="button__line"></div>
+                            <div class="button__line"></div>
+                            <span class="button__text">MES ASSOCIATIONS</span>
+                            <div class="button__drow1"></div>
+                            <div class="button__drow2"></div>
+                      <% end %>
+                    </div>
+                <% else %>
+                    <h2>Vous êtes pas connecté</h2>
+                    <%= link_to "Connexion", new_user_session_path, class: "btn btn-success" %>
+                    <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-primary" %>
+                <% end %>
+        </div>
+    </div>
+</div>
