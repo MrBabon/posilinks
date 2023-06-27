@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_27_124005) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_124436) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -39,12 +39,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_124005) do
     t.string "title"
     t.text "description"
     t.date "date"
-    t.bigint "assicia_id", null: false
+    t.bigint "associa_id", null: false
     t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_events_on_article_id"
-    t.index ["assicia_id"], name: "index_events_on_assicia_id"
+    t.index ["associa_id"], name: "index_events_on_associa_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_124005) do
   end
 
   add_foreign_key "events", "articles"
-  add_foreign_key "events", "associas", column: "assicia_id"
+  add_foreign_key "events", "associas"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
 end
