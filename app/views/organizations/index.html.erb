@@ -1,4 +1,89 @@
 <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 my-5">
+            <%= form_with url: organizations_path, method: :get, class: "d-flex" do %>
+                <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control border border-black border-end-0 shadow-lg",
+                    placeholder: "Nom de l'association"
+                %>
+                <%= submit_tag "Recherche", name: "", class: "nav-link border border-black border-start-0 py-1" %>
+            <% end %>
+        </div>
+        <div class='bp-index-container'>
+            <h1 class="titre-bold">TOUT <span class="phrase-couleur">NOS</span><br>ASSOCIATIONS </h1>
+            <% @organizations.each do |organization| %>
+                <div class="card-category col-6" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path organization.photo.key %>')">
+                    <h1><%= organization.name %></h1>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary" onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+<section class="articles">
+  <article>
+    <div class="article-wrapper">
+      <figure>
+        <img src="<%=  %>" alt="" /> 
+      </figure>
+      <div class="article-body">
+        <h2>This is some title</h2>
+        <p>
+          Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+        </p>
+        <a href="#" class="read-more">
+          Read more <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="https://picsum.photos/id/1005/800/450" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>This is some title</h2>
+        <p>
+          Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+        </p>
+        <a href="#" class="read-more">
+          Read more <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+  <article>
+
+    <div class="article-wrapper">
+      <figure>
+        <img src="https://picsum.photos/id/103/800/450" alt="" />
+      </figure>
+      <div class="article-body">
+        <h2>This is some title</h2>
+        <p>
+          Curabitur convallis ac quam vitae laoreet. Nulla mauris ante, euismod sed lacus sit amet, congue bibendum eros. Etiam mattis lobortis porta. Vestibulum ultrices iaculis enim imperdiet egestas.
+        </p>
+        <a href="#" class="read-more">
+          Read more <span class="sr-only">about this is some title</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </article>
+</section>
 
 
   <div class="row">
