@@ -11,7 +11,7 @@ gem "sprockets-rails"
 gem "pg_search"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-
+gem "cloudinary"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -23,7 +23,7 @@ gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
+gem "geocoder"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
