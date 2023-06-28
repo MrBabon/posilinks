@@ -27,6 +27,7 @@ resto_du_coeur = Organization.create!(
   phone_number: "0493800367",
   description: "Leur but est 'd’aider et d’apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l’accès à des repas gratuits, et par la participation à leur insertion sociale et économique, ainsi qu’à toute action contre la pauvreté sous toutes ses formes'."
 )
+
 #
 wwf = Organization.create!(
   name: "WWF",

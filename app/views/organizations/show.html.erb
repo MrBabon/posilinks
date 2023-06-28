@@ -1,2 +1,15 @@
-<h1>Organizations#show</h1>
-<p>Find me in app/views/organizations/show.html.erb</p>
+<h1><%= @organization.name %></h1>
+<p>Catégorie: <%= @organization.category %></p>
+<p>Email: <%= @organization.email %></p>
+<p>Adresse: <%= @organization.address %></p>
+<p>Téléphone: <%= @organization.phone_number %></p>
+<p>Description: <%= @organization.description %></p>
+
+<h2>Événements</h2>
+<% @organization.events.each do |event| %>
+  <h3><%= event.title %></h3>
+  <p><%= event.description %></p>
+  <p>Date: <%= event.date.strftime("%d-%m-%Y") %></p>
+  <p>Adresse: <%= event.address %></p>
+   <%= link_to event.title, organization_event_path(@organization, event), class: "button" %>
+<% end %>
