@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-8 my-5">
+            <%= form_with url: organizations_path, method: :get, class: "d-flex" do %>
+                <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control border border-black border-end-0 shadow-lg",
+                    placeholder: "Nom de l'association"
+                %>
+                <%= submit_tag "Recherche", name: "", class: "nav-link border border-black border-start-0 py-1" %>
+            <% end %>
+        </div>
+        <div class='bp-index-container'>
+            <h1 class="titre-bold">LES <span class="phrase-couleur">ACTUALITÉS</span> DES <br>ASSOCIATIONS </h1>
+
+            <% @organizations.each do |organization| %>
+                <h1><%= organization.name %></h1>
+                <p>
+                Notre principale cible: <%= organization.category %><br />
+                Description: <%= organization.description %><br />
+                Lieu de rencontre: <%= organization.address %>.<br>
+                Nous contacter: <%= organization.phone_number %>
+                </p>
+                <button class="btn btn-primary" onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
+            <% end %>
+        </div>
+    </div>
+</div>
