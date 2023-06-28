@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'organizations/index'
   get 'organizations/show'
@@ -9,12 +11,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :organizations do
-    resources :events, only: [:destroy]
+    resources :events, only: [:destroy, :index, :show]
     resources :articles, only: [:destroy]
   end
-  
-  
-  
+
   # get 'participations/create'
   # get 'articles/index'
   # get 'articles/show'
