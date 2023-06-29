@@ -1,15 +1,29 @@
-<h1><%= @organization.name %></h1>
-<p>Catégorie: <%= @organization.category %></p>
-<p>Email: <%= @organization.email %></p>
-<p>Adresse: <%= @organization.address %></p>
-<p>Téléphone: <%= @organization.phone_number %></p>
-<p>Description: <%= @organization.description %></p>
-
+<div class="container">
+  <h1><%= @organization.name %></h1>
+  <p>Catégorie: <%= @organization.category %></p>
+  <p>Email: <%= @organization.email %></p>
+  <p>Adresse: <%= @organization.address %></p>
+  <p>Téléphone: <%= @organization.phone_number %></p>
+  <p>Description: <%= @organization.description %></p>
+</div>
 <h2>Événements</h2>
-<% @organization.events.each do |event| %>
-  <h3><%= event.title %></h3>
-  <p><%= event.description %></p>
-  <p>Date: <%= event.date.strftime("%d-%m-%Y") %></p>
-  <p>Adresse: <%= event.address %></p>
-  <%= link_to event.title, organization_event_path(@organization, event), class: "button" %>
-<% end %>
+
+<div class="container-orga">
+  <div class="cards-orga">
+    <% @organization.events.each do |event| %>
+      <div class="card-orga shadow">
+        <h3><%= event.title %></h3>
+        <p><%= event.description %></p>
+        <p>Date: <%= event.date.strftime("%d-%m-%Y") %></p>
+        <p>Adresse: <%= event.address %></p>
+        <%= link_to event.title, organization_event_path(@organization, event), class: "button" %>
+      </div>
+    <% end %>
+  </div>
+  <div id="map-event"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"> 
+  </div>
+</div>
+
