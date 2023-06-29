@@ -10,12 +10,9 @@ class OrganizationsController < ApplicationController
 
   end
 
-  def show
     def show
       @organization = Organization.find(params[:id])
-
     end
-  end
 
   def new
   end
