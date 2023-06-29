@@ -11,7 +11,7 @@ a, a:visited, a:active {
 }
 
 a:hover {
-    color: #874C62;
+    color: #3c7e38;
 }
 
 main {
@@ -21,13 +21,13 @@ main {
 
 
 footer {
-    background-color: #F2D388;
-    color: #000000;
+    background-color: #333;
+    color: #ffffff;
     padding: 30px 100px;
 }
 
 footer h3 {
-    color: #000000;
+    color: white;
 }
 
 .footer-top {
@@ -87,7 +87,7 @@ footer h3 {
 
 .footer-middle input[type="submit"]:hover {
     color: white;
-    background-color: #ffa600;
+    background-color: #3c7e38;
 }
 
 .footer-bottom {
