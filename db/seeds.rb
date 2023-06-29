@@ -63,14 +63,35 @@ croix_rouge = Organization.new(
 croix_rouge.photo.attach(io: file_croix, filename: "croix.png", content_type: "image/png")
 croix_rouge.save
 
+
 nettoyage = Event.create!(
-  address: "La Base, 56100, Lorient, Morbihan, Bretagne, FRA",
+  address: "13 Prom. des Anglais, 06000 Nice",
   title: "Nettoyage de la plage",
   description: "Dans le cadre de Lorient Océans, RDV avec l’association Les Mains Dans Le Sable le dimanche 2 juillet de 10h30-12h30 pour une action de nettoyage de La Base à Lorient.",
   date: "2023-07-02",
   organization: wwf
 )
-
+collecte1 = Event.create!(
+  address: "606, Bd du mercantour, 06200 Nice",
+  title: "collecte de denrées alimentaire",
+  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ére nécessité (alimentaire, hygiéne etc...).",
+  date: "2023-07-12",
+  organization: wwf
+)
+collecte2 = Event.create!(
+  address: "461 ch des vignes, 83440 Montauroux",
+  title: "collecte de denrées alimentaire",
+  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ére nécessité (alimentaire, hygiéne etc...).",
+  date: "2023-07-12",
+  organization: wwf
+)
+collecte3 = Event.create!(
+  address: "43 av auguste renoir, 06800 Cagne-sur-mer",
+  title: "collecte de denrées alimentaire",
+  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ére nécessité (alimentaire, hygiéne etc...).",
+  date: "2023-07-12",
+  organization: wwf
+)
 article1 = Article.create!(
   title: "Article 1",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
