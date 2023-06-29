@@ -43,6 +43,11 @@
 
       <% @organizations.each do |organization| %>
         <h1><%= organization.name %></h1>
+        <% if organization.photo.key.present? %>
+          <img src="<%= cl_image_path organization.photo.key %>" alt="association">
+        <% else %>
+          <p>Aucune image disponible</p>
+        <% end %>
         <p>
           Notre principale cible: <%= organization.category %><br />
           Description: <%= organization.description %><br />

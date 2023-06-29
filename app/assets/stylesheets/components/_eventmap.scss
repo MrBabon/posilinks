@@ -1,0 +1,19 @@
+.events-map {
+  height: 100vh;
+  width: 35%;
+  position: sticky;
+  top: 0;
+}
+
+.events-container {
+  display: flex;
+}
+
+.events-content {
+  width: 65%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding: 20px;
+}
