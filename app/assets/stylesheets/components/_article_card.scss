@@ -1,6 +1,7 @@
 .article-card {
 .projcard-container {
   margin: 50px 0;
+  margin-left: 6px;
 }
 
 /* Actual Code: */
@@ -14,6 +15,7 @@
   width: 100%;
 }
 .projcard {
+  margin-left: 6px;
   position: relative;
   width: 100%;
   height: 300px;
@@ -58,6 +60,7 @@
   top: 0;
   left: 0;
   transition: transform 0.2s ease;
+  margin-left: 6px;
 }
 .projcard:nth-child(2n) .projcard-img {
   left: initial;
@@ -76,6 +79,7 @@
   left: 430px;
   width: calc(100% - 470px);
   font-size: 17px;
+  margin-left: 6px;
 }
 .projcard:nth-child(2n) .projcard-textbox {
   left: initial;
@@ -93,6 +97,7 @@
   height: 140%;
   width: 60px;
   transform: rotate(8deg);
+  margin-left: 6px;
 }
 .projcard:nth-child(2n) .projcard-textbox::before {
   display: none;
@@ -164,6 +169,7 @@
   cursor: default;
   user-select: none;
   pointer-events: none;
+  margin-left: 6px;
 }
 .projcard-tag {
   display: inline-block;
@@ -177,6 +183,7 @@
   cursor: default;
   user-select: none;
   transition: color 0.2s;
+  margin-left: 6px;
 }
 .projcard-tag::before {
   content: '';
@@ -188,6 +195,7 @@
   left: 10px;
   width: 6px;
   top: 10px;
+  margin-left: 6px;
 }
 .projcard-tag::after {
   content: '';
@@ -197,5 +205,6 @@
   border-top: 13px solid transparent;
   right: -10px;
   top: 0;
+  margin-left: 6px;
 }
 }
