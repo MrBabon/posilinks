@@ -118,6 +118,10 @@ a.social:not(:last-child) {
     margin-right: 10px;
 }
 
+.bouton-phone {
+    display: none;
+}
+
 @media screen and (max-width: 900px) {
     .footer-top{
         justify-items: start;
@@ -129,7 +133,13 @@ a.social:not(:last-child) {
         padding: 30px;
     }
     .footer-middle {
-        text-align: left;
+        display: none;
 
+    }
+    .bouton-phone {
+        display: none;
+    }
+    a.social {
+        display: none;
     }
 }
