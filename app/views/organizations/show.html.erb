@@ -1,12 +1,32 @@
-<div class="container">
-  <h1><%= @organization.name %></h1>
-  <p>Catégorie: <%= @organization.category %></p>
-  <p>Email: <%= @organization.email %></p>
-  <p>Adresse: <%= @organization.address %></p>
-  <p>Téléphone: <%= @organization.phone_number %></p>
-  <p>Description: <%= @organization.description %></p>
+<div class="organization-banner">
+<div class="wrap animate pop">
+		<div class="overlay">
+			<div class="overlay-content animate slide-left delay-2">
+				<h1 class="animate slide-left pop delay-4"><%= @organization.name %></h1>
+				<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;"><p>Adresse: <%= @organization.address %></p><em><p>Catégorie: <%= @organization.category %></p>
+<p>Email: <%= @organization.email %></p>
+<p>Adresse: <%= @organization.address %></p>
+<p>Téléphone: <%= @organization.phone_number %></p></em></p>
+			</div>
+			<div class="image-content animate slide delay-5"></div>
+					<div class="dots animate">
+						<div class="dot animate slide-up delay-6"></div>
+						<div class="dot animate slide-up delay-7"></div>
+						<div class="dot animate slide-up delay-8"></div>
+					</div>
+		</div>
+			<div class="text">
+				<p>Description: <%= @organization.description %></p>
+			</div>
+	</div>
 </div>
+
+
+
+
+
 <h2>Événements</h2>
+
 <div class="container-orga">
   <div class="cards-orga">
     <% @organization.events.each do |event| %>
@@ -22,6 +42,6 @@
   <div id="map-event"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"> 
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

@@ -10,6 +10,7 @@ class OrganizationsController < ApplicationController
 
   end
 
+
   def show
       @organization = Organization.find(params[:id])
       @events = @organization.events

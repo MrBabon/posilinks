@@ -110,4 +110,20 @@ article2 = Article.create!(
   content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
   event: collecte
 )
+
+soutien = Event.create!(
+  address: "Av. de la Vaugine, 83300 Draguignan",
+  title: "Soutien psychologique et isolement social",
+  description: "Dépression, troubles affectifs, anxiété, burn-out ou idées noires sont autant de difficultés auxquelles nous sommes nombreux à faire face. Alors que 50 % des absences au travail sont liées à la santé mentale, 1 personne sur 5 souffre de troubles mentaux dans sa vie",
+  date: "2023-09-05",
+  organization: croix_rouge
+)
+integration_social = Event.create!(
+  address: "50 Rue Ferrere, 33000 Bordeaux",
+  title: "Intégration sociale des personnes en situation de précarité",
+  description: "Nous le constatons chaque jour dans nos délégations, le travail ne protège plus de la précarité. Aujourd’hui, viennent s’ajouter aux personnes sans-abri trois nouvelles catégories de bénéficiaires ayant recours aux aides sociales : les jeunes, les personnes âgées et les travailleurs pauvres.",
+  date: "2023-11-25",
+  organization: croix_rouge
+)
+
 puts "finish"
