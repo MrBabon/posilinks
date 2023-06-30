@@ -2,16 +2,13 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @markers = @events.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {event: event})
-      }
+      map_view(event)
     end
   end
 
   def show
     @event = Event.find(params[:id])
+    @marker = map_view(@event)
   end
 
   def create
@@ -24,5 +21,15 @@ class EventsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def map_view(event)
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {event: event})
+      }
   end
 end
