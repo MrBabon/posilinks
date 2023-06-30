@@ -42,6 +42,7 @@
       <h1 class="titre-bold">LES <span class="phrase-couleur">ACTUALITÉS</span> DES <br>ASSOCIATIONS </h1>
 
       <% @organizations.each do |organization| %>
+      <div class="product-card">
         <h1><%= organization.name %></h1>
         <% if organization.photo.key.present? %>
           <img src="<%= cl_image_path organization.photo.key %>" alt="association">
@@ -56,6 +57,7 @@
         </p>
         <button class="btn btn-primary" onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
