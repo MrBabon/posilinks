@@ -24,7 +24,7 @@ Event.destroy_all
 Article.destroy_all
 puts "Database cleaned"
 
-file_resto = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1687891500/resto-du-coeur_wvdt8s.jpg")
+# file_resto = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1687891500/resto-du-coeur_wvdt8s.jpg")
 resto_du_coeur = Organization.new(
   name: "Resto du coeur",
   category: "humanitaire",
@@ -34,10 +34,10 @@ resto_du_coeur = Organization.new(
   phone_number: "0493800367",
   description: "Leur but est 'd’aider et d’apporter une assistance bénévole aux personnes démunies, notamment dans le domaine alimentaire par l’accès à des repas gratuits, et par la participation à leur insertion sociale et économique, ainsi qu’à toute action contre la pauvreté sous toutes ses formes'."
 )
-resto_du_coeur.photo.attach(io: file_resto, filename: "resto.png", content_type: "image/png")
+# resto_du_coeur.photo.attach(io: file_resto, filename: "resto.png", content_type: "image/png")
 resto_du_coeur.save
 #
-file_wwf = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1687891500/association-wwf_fjkllr.jpg")
+# file_wwf = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1687891500/association-wwf_fjkllr.jpg")
 wwf = Organization.new(
   name: "WWF",
   category: "ecologie",
@@ -47,10 +47,10 @@ wwf = Organization.new(
   phone_number: "0171864060",
   description: "Arrêter la dégradation de l'environnement dans le monde et construire un avenir où les êtres humains pourront vivre en harmonie avec la nature."
 )
-wwf.photo.attach(io: file_wwf, filename: "wwf.png", content_type: "image/png")
+#wwf.photo.attach(io: file_wwf, filename: "wwf.png", content_type: "image/png")
 wwf.save
 
-file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1687891500/Croix-rouge_franc%CC%A7aise_b91u8u.gif")
+#file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1687891500/Croix-rouge_franc%CC%A7aise_b91u8u.gif")
 croix_rouge = Organization.new(
   name: "Croix rouge",
   category: "humanitaire",
@@ -60,7 +60,7 @@ croix_rouge = Organization.new(
   phone_number: "0489144336",
   description: "Bénévoles, salariés, mettez vos compétences au service d'une grande idée. Avec vos dons nous sauvons des vies et nous aidons les personnes démunies."
 )
-croix_rouge.photo.attach(io: file_croix, filename: "croix.png", content_type: "image/png")
+#croix_rouge.photo.attach(io: file_croix, filename: "croix.png", content_type: "image/png")
 croix_rouge.save
 
 
@@ -94,7 +94,7 @@ collecte3 = Event.create!(
 )
 article1 = Article.create!(
   title: "Article 1",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
   event: nettoyage
 )
 collecte = Event.create!(
@@ -107,9 +107,10 @@ collecte = Event.create!(
 
 article2 = Article.create!(
   title: "Venez nombreux, nous aider!",
-  content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
   event: collecte
 )
+
 soutien = Event.create!(
   address: "Av. de la Vaugine, 83300 Draguignan",
   title: "Soutien psychologique et isolement social",
@@ -124,4 +125,5 @@ integration_social = Event.create!(
   date: "2023-11-25",
   organization: croix_rouge
 )
+
 puts "finish"

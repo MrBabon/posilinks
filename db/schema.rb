@@ -14,7 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_124614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -42,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_124614) do
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
-
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
