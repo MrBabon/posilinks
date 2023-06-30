@@ -94,7 +94,7 @@ collecte3 = Event.create!(
 )
 article1 = Article.create!(
   title: "Article 1",
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
   event: nettoyage
 )
 collecte = Event.create!(
@@ -107,9 +107,10 @@ collecte = Event.create!(
 
 article2 = Article.create!(
   title: "Venez nombreux, nous aider!",
-  content: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
   event: collecte
 )
+
 soutien = Event.create!(
   address: "Av. de la Vaugine, 83300 Draguignan",
   title: "Soutien psychologique et isolement social",
@@ -124,4 +125,5 @@ integration_social = Event.create!(
   date: "2023-11-25",
   organization: croix_rouge
 )
+
 puts "finish"
