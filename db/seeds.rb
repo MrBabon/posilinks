@@ -58,19 +58,6 @@ wwf = Organization.new(
 wwf.photo.attach(io: file_wwf, filename: "wwf.png", content_type: "image/png")
 wwf.save
 
-file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688379258/croix-rouge-300x300_iqw8mf.jpg")
-croix_rouge = Organization.new(
-  name: "Croix rouge",
-  category: "humanitaire",
-  email: "croixrouge@lewagon.fr",
-  password: "password",
-  address: "65 Av. Alfred Borriglione, 06100 Nice",
-  phone_number: "0489144336",
-  description: "Bénévoles, salariés, mettez vos compétences au service d'une grande idée. Avec vos dons nous sauvons des vies et nous aidons les personnes démunies."
-)
-croix_rouge.photo.attach(io: file_croix, filename: "croix.png", content_type: "image/png")
-croix_rouge.save
-
 nettoyage = Event.create!(
   address: "13 Prom. des Anglais, 06000 Nice",
   title: "Nettoyage de la plage",
