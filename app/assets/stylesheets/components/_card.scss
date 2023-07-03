@@ -51,8 +51,19 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
-
 }
+
+.event-width {
+  width: 50%;
+}
+
+.align-event {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .product-card {
 
 .bp-index-container {
