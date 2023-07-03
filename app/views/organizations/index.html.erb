@@ -9,55 +9,44 @@
         <%= submit_tag "Recherche", name: "", class: "nav-link border border-black border-start-0 py-1" %>
         <% end %>
     </div>
-
-<div class="container">
-
+  <div class="container">
     <div class="row">
-    <div class="col">
-     <div class="event-card-grid">
-
-     <% all_events = @organizations.map(&:events).flatten %>
-
-  <% all_events.each_with_index do |event, index| %>
-    <% rotation_degrees = index.even? ? 10 : -10 %>
-    <div class="event-card" style="transform: rotate(<%= rotation_degrees %>deg);">
-
-      <h2><%= event.organization.name %></h2>
-      <img src="https://picsum.photos/600/300" alt="Image de la carte">
-      <h2><%= event.title %></h2>
-      <p><%= event.date.strftime("%d-%m-%Y") %></p>
-      <%= link_to event.title, organization_event_path(event.organization, event), class: "button" %>
-    </div>
-  <% end %>
-
-
-</div>
-</div>
+      <div class="col">
+        <div class="event-card-grid">
+          <% all_events = @organizations.map(&:events).flatten %>
+            <% all_events.each_with_index do |event, index| %>
+              <% rotation_degrees = index.even? ? 10 : -10 %>
+              <div class="event-card" style="transform: rotate(<%= rotation_degrees %>deg);">
+                <h2><%= event.organization.name %></h2>
+                <img src="https://picsum.photos/600/300" alt="Image de la carte">
+                <h2><%= event.title %></h2>
+                <p><%= event.date.strftime("%d-%m-%Y") %></p>
+                <%= link_to event.title, organization_event_path(event.organization, event), class: "button" %>
+              </div>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>
-
-    <div class='bp-index-container mt-2'>
-
-      <h1 class="titre-bold">LES <span class="phrase-couleur">ACTUALITÉS</span> DES <br>ASSOCIATIONS </h1>
-
+  <div class='bp-index-container mt-2'>
+    <h1 class="titre-bold">TOUS NOS <span class="phrase-couleur">PARTENAIRES</span> <br>ASSOCIATIFS </h1>
+    <div class="bp-index-container-ac">
       <% @organizations.each do |organization| %>
-      <div class="product-card">
-        <h1><%= organization.name %></h1>
-        <% if organization.photo.key.present? %>
-          <img src="<%= cl_image_path organization.photo.key %>" alt="association">
-        <% else %>
-          <p>Aucune image disponible</p>
-        <% end %>
-        <p>
-          Notre principale cible: <%= organization.category %><br />
-          Description: <%= organization.description %><br />
-          Lieu de rencontre: <%= organization.address %>.<br>
-          Nous contacter: <%= organization.phone_number %>
-        </p>
-        <button class="btn btn-primary " onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
+        <div class="affichage-ac mb-5">
+          <div class="bp-container-grid-ac">
+            <% if organization.photo.key.present? %>
+              <img src="<%= cl_image_path organization.photo.key %>" alt="association">
+            <% else %>
+              <p>Aucune image disponible</p>
+            <% end %>
+            <div class="container__ac">
+              <h1><%= organization.name %></h1>
+              <p><%= organization.category %></p>
+              <button class="bouton-ac " onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>  
       <% end %>
-      </div>
     </div>
   </div>
 </div>
