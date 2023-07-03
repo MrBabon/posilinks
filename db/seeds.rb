@@ -24,7 +24,7 @@ Event.destroy_all
 Article.destroy_all
 puts "Database cleaned"
 
-file_resto = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688044354/development/qa2r87m63yp0d9ew37qcvrrvz72f.jpg")
+file_resto = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688379265/resto_z5tci7.jpg")
 resto_du_coeur = Organization.new(
   name: "Resto du coeur",
   category: "humanitaire",
@@ -50,7 +50,7 @@ wwf = Organization.new(
 wwf.photo.attach(io: file_wwf, filename: "wwf.png", content_type: "image/png")
 wwf.save
 
-file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688044357/development/20gzf3zlwd9mq8jplns4awhjox4e.gif")
+file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688379258/croix-rouge-300x300_iqw8mf.jpg")
 croix_rouge = Organization.new(
   name: "Croix rouge",
   category: "humanitaire",
