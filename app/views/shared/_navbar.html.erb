@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/dilp6xqmb/image/upload/v1688071307/planete_jwpgvw.png" %>
+      PosiLink
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,14 +24,14 @@
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profil", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Messages", "#", class: "dropdown-item" %>
               <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
+          <!--li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+          </!--li-->
         <% end %>
       </ul>
     </div>

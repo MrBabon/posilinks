@@ -128,7 +128,7 @@ a.social:not(:last-child) {
     }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 560px) {
     footer {
         padding: 30px;
     }
@@ -137,7 +137,12 @@ a.social:not(:last-child) {
 
     }
     .bouton-phone {
-        display: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 100px;
+        font-size: 40px;
+        margin: 0 0 0 4px;
+        color: #AD8B73;
     }
     a.social {
         display: none;
