@@ -73,7 +73,7 @@ article1 = Article.create!(
 )
 
 article2 = Article.create!(
-  title: "Protections à prendre avant l'événement",
+  title: "Précautions à prendre avant l'événement",
   content: "Chers participants, afin de passer un nettoyage de la plage en toute sécurité, nous vous conseillons de prendre quelques précautions :<br/> - Veuillez vous munir de chaussures fermées et de gants de nettoyage afin d'éviter tout contact avec des débris dangereux, tout comme des aiguilles ou des morceaux de verre coupants.<br/> - N'ouvrez jamais de contenants comme les bouteilles, jarres, boîtes, etc..., car les contenus peuvent être nocifs à votre santé.<br/> - Triez les déchets que vous trouverez sur place et ramenez-les aux endroits indiqués à cet effet par les organisateurs.<br/> Sur ce, bonne préparation et à bientôt !",
   event: nettoyage
 )
