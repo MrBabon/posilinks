@@ -1,13 +1,13 @@
 <div class="row justify-content-center">
     <div class="col-sm-8 my-5">
-        <%= form_with url: organizations_path, method: :get, class: "d-flex barre-recherche" do %>
+      <%= form_with url: organizations_path, method: :get, class: "d-flex barre-recherche shadow-lg rounded-pill mb-4" do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control border border-black border-end-0 shadow-lg",
+          class: "form-control recherche-input",
           placeholder: "Nom de l'association"
         %>
-        <%= submit_tag "Recherche", name: "", class: "nav-link border border-black border-start-0 py-1" %>
-        <% end %>
+        <%= submit_tag "Recherche", name: "", class: "nav-link py-1 px-2" %>
+      <% end %>
     </div>
   <div class="container">
     <div class="row">

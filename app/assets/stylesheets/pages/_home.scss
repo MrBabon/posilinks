@@ -47,4 +47,11 @@ p {
 
 .barre-recherche {
   margin: 0 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.recherche-input {
+  border-radius: 100px 0 0 100px;
+  border: 0 1px 0 0 solid black;
 }
