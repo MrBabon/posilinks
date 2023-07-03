@@ -9,9 +9,7 @@
         <%= submit_tag "Recherche", name: "", class: "nav-link border border-black border-start-0 py-1" %>
         <% end %>
     </div>
-
-<div class="container">
-
+  <div class="container">
     <div class="row">
     <div class="col">
      <div class="event-card-grid">
@@ -31,28 +29,25 @@
       </div>
     </div>
   </div>
-
-    <div class='bp-index-container mt-2'>
-
-      <h1 class="titre-bold">LES <span class="phrase-couleur">ACTUALITÉS</span> DES <br>ASSOCIATIONS </h1>
-
+  <div class='bp-index-container mt-2'>
+    <h1 class="titre-bold">TOUS NOS <span class="phrase-couleur">PARTENAIRES</span> <br>ASSOCIATIFS </h1>
+    <div class="bp-index-container-ac">
       <% @organizations.each do |organization| %>
-      <div class="product-card">
-        <h1><%= organization.name %></h1>
-        <% if organization.photo.key.present? %>
-          <img src="<%= cl_image_path organization.photo.key %>" alt="association">
-        <% else %>
-          <p>Aucune image disponible</p>
-        <% end %>
-        <p>
-          Notre principale cible: <%= organization.category %><br />
-          Description: <%= organization.description %><br />
-          Lieu de rencontre: <%= organization.address %>.<br>
-          Nous contacter: <%= organization.phone_number %>
-        </p>
-        <button class="btn btn-primary " onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
+        <div class="affichage-ac mb-5">
+          <div class="bp-container-grid-ac">
+            <% if organization.photo.key.present? %>
+              <img src="<%= cl_image_path organization.photo.key %>" alt="association">
+            <% else %>
+              <p>Aucune image disponible</p>
+            <% end %>
+            <div class="container__ac">
+              <h1><%= organization.name %></h1>
+              <p><%= organization.category %></p>
+              <button class="bouton-ac " onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>  
       <% end %>
-      </div>
     </div>
   </div>
 </div>

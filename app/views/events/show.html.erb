@@ -10,7 +10,7 @@
       <% @event.articles.each do |article| %>
         <div class="card-event" data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
           <h3><strong><%= article.title %></strong></h3>
-          <p class="my-content" data-read-more-target="content"><%= article.content %></p>
+          <p class="my-content" data-read-more-target="content"><%= sanitize article.content %></p>
           <button class="btn btn-warning" data-action="read-more#toggle">Read more</button>
         </div>
       <% end %>
