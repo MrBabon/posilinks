@@ -1,32 +1,12 @@
+<% @events.each do |event| %>
 <div class="projcard-container">
   <img class="projcard-img" src="https://picsum.photos/300/300?image=1041" />
   <div class="title-subtitle">
-    <h2 class="projcard-title">Card Title</h2>
+    <h2 class="projcard-title"><%= event.title %></h2>
     <h3 class="projcard-subtitle">This explains the card in more detail</h3>
   </div>
   <div class="projcard-description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <%= event.description %>
   </div>
 </div>
-
-<div class="projcard-container">
-  <img class="projcard-img" src="https://picsum.photos/300/300?image=1080" />
-  <div class="title-subtitle">
-    <h2 class="projcard-title">Card Title</h2>
-    <h3 class="projcard-subtitle">This explains the card in more detail</h3>
-  </div>
-  <div class="projcard-description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </div>
-</div>
-
-<div class="projcard-container">
-  <img class="projcard-img" src="https://picsum.photos/300/300?image=1039" />
-  <div class="title-subtitle">
-    <h2 class="projcard-title">Card Title</h2>
-    <h3 class="projcard-subtitle">This explains the card in more detail</h3>
-  </div>
-  <div class="projcard-description">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </div>
-</div>
+<% end %>
