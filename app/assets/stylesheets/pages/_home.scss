@@ -55,3 +55,13 @@ p {
   border-radius: 100px 0 0 100px;
   border: 0 1px 0 0 solid black;
 }
+
+.bouton-search {
+  border-radius: 0 100px 100px 0;
+}
+
+.bouton-search:hover {
+  color: $primary-color;
+  background-color: $hover-color;
+  border-radius: 0 100px 100px 0;
+}
