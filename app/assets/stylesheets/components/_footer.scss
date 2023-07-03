@@ -118,18 +118,33 @@ a.social:not(:last-child) {
     margin-right: 10px;
 }
 
+.bouton-phone {
+    display: none;
+}
+
 @media screen and (max-width: 900px) {
     .footer-top{
         justify-items: start;
     }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 560px) {
     footer {
         padding: 30px;
     }
     .footer-middle {
-        text-align: left;
+        display: none;
 
+    }
+    .bouton-phone {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 100px;
+        font-size: 40px;
+        margin: 0 0 0 4px;
+        color: #AD8B73;
+    }
+    a.social {
+        display: none;
     }
 }
