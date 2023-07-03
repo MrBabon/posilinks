@@ -21,12 +21,7 @@
   <% all_events.each_with_index do |event, index| %>
     <% rotation_degrees = index.even? ? 10 : -10 %>
     <div class="event-card" style="transform: rotate(<%= rotation_degrees %>deg);">
-
-      <h2><%= event.organization.name %></h2>
-      <img src="https://picsum.photos/600/300" alt="Image de la carte">
-      <h2><%= event.title %></h2>
-      <p><%= event.date.strftime("%d-%m-%Y") %></p>
-      <%= link_to event.title, organization_event_path(event.organization, event), class: "button" %>
+    <%= render partial: "shared/photo_card", locals: {event: event} %>
     </div>
   <% end %>
 
