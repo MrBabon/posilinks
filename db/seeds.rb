@@ -39,8 +39,16 @@ resto_du_coeur.save
 
 collecte = Event.create!(
   address: "606, Bd du mercantour, 06200 Nice",
-  title: "collecte de denrées alimentaire",
-  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ére nécessité (alimentaire, hygiéne etc...).",
+  title: "Collecte de denrées alimentaires",
+  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ère nécessité (alimentaire, hygiène etc...).",
+  date: "2023-07-12",
+  organization: resto_du_coeur
+)
+
+distribution = Event.create!(
+  address: "21 Rue Dabray, 06000 Nice",
+  title: "Distributions de denrées alimentaires",
+  description: "Distribution de denrées alimentaires et hygiéniques pour des personnes dans le besoin, organisée par les Restos du Cœur dans ses locaux, le mercredi 12 juillet, de 17h à 19h",
   date: "2023-07-12",
   organization: resto_du_coeur
 )
@@ -78,16 +86,15 @@ article2 = Article.create!(
   event: nettoyage
 )
 
-
-collecte1 = Event.create!(
-  address: "606, Bd du mercantour, 06200 Nice",
-  title: "collecte de denrées alimentaire",
-  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ére nécessité (alimentaire, hygiéne etc...).",
-  date: "2023-07-12",
+plantation = Event.create!(
+  address: "2680 Rte de la Revere, 06360 Èze",
+  title: "Plantation d'arbres au Parc de la Grande Corniche",
+  description: "Dans le cadre de la reforestation du Parc Naturel Départemental de la Grande Corniche, une plantation d'arbres est organisée le dimanche 10 juillet de 9h à 12h",
+  date: "2023-07-10",
   organization: wwf
 )
 
-file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688044357/development/20gzf3zlwd9mq8jplns4awhjox4e.gif")
+file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688379258/croix-rouge-300x300_iqw8mf.jpg")
 croix_rouge = Organization.new(
   name: "Croix rouge",
   category: "humanitaire",
@@ -115,25 +122,5 @@ integration_sociale = Event.create!(
   date: "2023-11-25",
   organization: croix_rouge
 )
-
-
-collecte2 = Event.create!(
-  address: "461 ch des vignes, 83440 Montauroux",
-  title: "collecte de denrées alimentaire",
-  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ére nécessité (alimentaire, hygiéne etc...).",
-  date: "2023-07-12",
-  organization: wwf
-)
-
-collecte3 = Event.create!(
-  address: "43 av auguste renoir, 06800 Cagne-sur-mer",
-  title: "collecte de denrées alimentaire",
-  description: "Dans le cadre de la collecte de denrées alimentaire, RDV avec l’association des Restos du coeur le mercredi 12 juillet de 14h00-18h00 à Carrefour Lingostiére pour animer la récolte de produits de 1ére nécessité (alimentaire, hygiéne etc...).",
-  date: "2023-07-12",
-  organization: wwf
-)
-
-
-
 
 puts "finish"
