@@ -69,7 +69,7 @@ wwf.save
 nettoyage = Event.create!(
   address: "13 Prom. des Anglais, 06000 Nice",
   title: "Nettoyage de la plage",
-  description: "Dans le cadre de Lorient Océans, RDV avec l’association Les Mains Dans Le Sable le dimanche 2 juillet de 10h30-12h30 pour une action de nettoyage de La Base à Lorient.",
+  description: "Dans le cadre d'Initiatives Océanes, RDV avec l’association Surfrider Foundation Europe le dimanche 2 juillet de 10h30-12h30 pour une action de nettoyage de la plage de la Promenade des Anglais.",
   date: "2023-07-02",
   organization: wwf
 )
@@ -94,6 +94,22 @@ plantation = Event.create!(
   organization: wwf
 )
 
+jardin = Event.create!(
+  address: "11 Voie Romaine, 06000 Nice",
+  title: "Plantation de légumes au Jardin Potager de la Voie Romaine",
+  description: "En coordination avec l'association Pasteur Avenir Jeunesse (P@JE), une plantation de légumes et d'aromates est organisée le 11 juillet de 9h à 17h",
+  date: "2023-07-11",
+  organization: wwf
+)
+
+conference = Event.create!(
+  address: "25 avenue François Mitterrand, 06300 Nice",
+  title: "Conférence sur les enjeux climatiques à l'Université Saint-Jean d'Angély",
+  description: "En partenariat avec l'Université Saint-Jean d'Angély et ses professeurs, une conférence autour des enjeux climatiques aura lieu le 13 juillet de 18h à 20h dans l'Amphithéâtre 1.",
+  date: "2023-07-13",
+  organization: wwf
+)
+
 file_croix = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688379258/croix-rouge-300x300_iqw8mf.jpg")
 croix_rouge = Organization.new(
   name: "Croix rouge",
@@ -110,7 +126,7 @@ croix_rouge.save
 soutien = Event.create!(
   address: "Av. de la Vaugine, 83300 Draguignan",
   title: "Soutien psychologique et isolement social",
-  description: "Dépression, troubles affectifs, anxiété, burn-out ou idées noires sont autant de difficultés auxquelles nous sommes nombreux à faire face. Alors que 50 % des absences au travail sont liées à la santé mentale, 1 personne sur 5 souffre de troubles mentaux dans sa vie",
+  description: "Dépression, troubles affectifs, anxiété, burn-out ou idées noires sont autant de difficultés auxquelles nous sommes nombreux à faire face. Alors que 50 % des absences au travail sont liées à la santé mentale, 1 personne sur 5 souffre de troubles mentaux dans sa vie. Nous organisons un atelier de groupe afin de discuter de ces sujets, et ce sans tabou.",
   date: "2023-09-05",
   organization: croix_rouge
 )
