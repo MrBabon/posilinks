@@ -4,18 +4,13 @@
     <p>Aidez-nous à améliorer notre communauté.</p>
   </div>
 </div>
-<div class="container mt-3 mb-4">
+<div class="container mt-3 mb-5">
     <div class="row">
-        <div class="col">
+        <div class="col home-style">
                 <% if user_signed_in? %>
-                    <h2>Bienvenue <%= current_user.nickname %> !</h2>
-                    <p>Vous voulez donner votre temps à une bonne cause ?</p>
-                    <br>
-                    <p>Vous souhaitez contacter des associations locales et participer à des événements ?</p>
-                    <br>
-                    <p>Posilink est là pour vous !</p>
-                    <br>
-                    <div class="d-flex">
+                    <h2 class="mt-3">Bon retour parmis nous <%= current_user.nickname %> !</h2>
+
+                    <div class="d-flex mt-5">
                       <%= link_to organizations_path, class:"button" do %>
                             <div class="button__line"></div>
                             <div class="button__line"></div>
@@ -25,9 +20,19 @@
                       <% end %>
                     </div>
                 <% else %>
-                    <h2>Vous êtes pas connecté</h2>
-                    <%= link_to "Connexion", new_user_session_path, class: "btn btn-success" %>
-                    <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-primary" %>
+                    <h2>REJOIGNEZ <span class="phrase-couleur">POSILINK</span></h2>
+                    <br>
+                    <h3 class="bold-h3">Où les <span class="phrase-couleur">bonnes actions</span> créent des liens qui inspirent. Devenez un moteur de positivité et partagez votre impact. <br>Ensemble, faisons du bien et construisons un <span class="phrase-couleur">avenir solidaire</span> !</h3>
+                    <br>
+                    <div class="d-flex">
+                      <%= link_to new_user_registration_path, class:"button" do %>
+                            <div class="button__line"></div>
+                            <div class="button__line"></div>
+                            <span class="button__text">NOUS REJOINDRE</span>
+                            <div class="button__drow1"></div>
+                            <div class="button__drow2"></div>
+                      <% end %>
+                    </div>
                 <% end %>
         </div>
     </div>
