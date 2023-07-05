@@ -1,23 +1,22 @@
 <div class="organization-banner">
   <div class="wrap animate pop">
-      <div class="overlay">
-        <div class="overlay-content animate slide-left delay-2">
-          <h1 class="animate slide-left pop delay-4"><%= @organization.name %></h1>
-          <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;"><p>Adresse: <%= @organization.address %></p><em><p>Catégorie: <%= @organization.category %></p>
-          <p>Email: <%= @organization.email %></p>
-          <p>Adresse: <%= @organization.address %></p>
-          <p>Téléphone: <%= @organization.phone_number %></p></em></p>
-        </div>
-        <div class="image-content animate slide delay-5"></div>
-            <div class="dots animate">
-              <div class="dot animate slide-up delay-6"></div>
-              <div class="dot animate slide-up delay-7"></div>
-              <div class="dot animate slide-up delay-8"></div>
-            </div>
+    <div class="overlay">
+      <div class="overlay-content animate slide-left delay-2">
+        <h1 class="animate slide-left pop delay-4"><%= @organization.name %></h1>
+        <p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;"><p>Adresse: <%= @organization.address %></p><em><p>Catégorie: <%= @organization.category %></p>
+        <p>Email: <%= @organization.email %></p>
+        <p>Adresse: <%= @organization.address %></p>
+        <p>Téléphone: <%= @organization.phone_number %></p></em></p>
       </div>
-        <div class="text">
-          <p>Description: <%= @organization.description %></p>
-        </div>
+      <div class="image-content animate slide delay-5"></div>
+      <div class="dots animate">
+        <div class="dot animate slide-up delay-6"></div>
+        <div class="dot animate slide-up delay-7"></div>
+        <div class="dot animate slide-up delay-8"></div>
+      </div>
+    </div>
+    <div class="text">
+      <p>Description: <%= @organization.description %></p>
     </div>
   </div>
   <h2 class="my-5">Événements</h2>
