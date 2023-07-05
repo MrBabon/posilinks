@@ -1,25 +1,31 @@
 <div class="organization-banner">
-<div class="wrap animate pop">
-		<div class="overlay">
-			<div class="overlay-content animate slide-left delay-2">
-				<h1 class="animate slide-left pop delay-4"><%= @organization.name %></h1>
-				<p class="animate slide-left pop delay-5" style="color: white; margin-bottom: 2.5rem;"><p>Adresse: <%= @organization.address %></p><em><p>Catégorie: <%= @organization.category %></p>
-<p>Email: <%= @organization.email %></p>
-<p>Adresse: <%= @organization.address %></p>
-<p>Téléphone: <%= @organization.phone_number %></p></em></p>
+<section class="dark">
+	<div class="container py-4">
+
+
+		<article class="postcard dark blue">
+			<a class="postcard__img_link" href="#">
+				<img class="postcard__img" src="https://picsum.photos/1000/1000" alt="Image Title" />
+			</a>
+			<div class="postcard__text">
+				<h1 class="postcard__title blue"><a href="#"> <%= @organization.name %></a></h1>
+				<div class="postcard__subtitle small">
+
+				</div>
+				<div class="postcard__bar"></div>
+				<div class="postcard__preview-txt"> <%= @organization.description %></div>
+				<ul class="postcard__tagbox">
+					<li class="tag__item"><i class="fas fa-tag mr-2"></i><%= @organization.address %></li>
+					 <li class="tag__item"><a href="tel:<%= @organization.phone_number %>"><i class="fas fa-phone mr-2"></i><%= @organization.phone_number %></a></li>
+          <li class="tag__item"><a href="mailto:<%= @organization.email %>"> <i class="fas fa-envelope mr-2"></i><%= @organization.email %></a></li>
+				</ul>
 			</div>
-			<div class="image-content animate slide delay-5"></div>
-					<div class="dots animate">
-						<div class="dot animate slide-up delay-6"></div>
-						<div class="dot animate slide-up delay-7"></div>
-						<div class="dot animate slide-up delay-8"></div>
-					</div>
-		</div>
-			<div class="text">
-				<p>Description: <%= @organization.description %></p>
-			</div>
-	</div>
-</div>
+		</article>
+
+
+</section>
+
+
 
 
 
