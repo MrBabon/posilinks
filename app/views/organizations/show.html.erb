@@ -1,3 +1,8 @@
+<% content_for :meta_title, "#{@organization.name} • Posilink" %>
+<% content_for :meta_description, "Les derniers évènements de #{@organization.name}" %>
+<% content_for :meta_image, cl_image_path(@organization.photo.key) %>
+
+
 <div class="organization-banner">
 <section class="dark">
 	<div class="container py-4">
@@ -16,7 +21,7 @@
 				<div class="postcard__preview-txt"> <%= @organization.description %></div>
 				<ul class="postcard__tagbox">
 					<li class="tag__item"><i class="fas fa-tag mr-2"></i><%= @organization.address %></li>
-					 <li class="tag__item"><a href="tel:<%= @organization.phone_number %>"><i class="fas fa-phone mr-2"></i><%= @organization.phone_number %></a></li>
+					<li class="tag__item"><a href="tel:<%= @organization.phone_number %>"><i class="fas fa-phone mr-2"></i><%= @organization.phone_number %></a></li>
           <li class="tag__item"><a href="mailto:<%= @organization.email %>"> <i class="fas fa-envelope mr-2"></i><%= @organization.email %></a></li>
 				</ul>
 			</div>
