@@ -5,17 +5,23 @@
     <p>Date: <%= @event.date.strftime("%d-%m-%Y") %></p>
     <p>Adresse: <%= @event.address %></p>
 
+
     <!-- JE DOIT METTRE UNE CONDITION-->
     <% if Participation.participation_exist?(current_user, @event) %>
       <!-- CETTE PARTIE SERA LA CONDITION SI L'UTILISATEUR S'INSCRIT À L'ÉVÈNEMENT -->
       <h2>Articles</h2>
-      <% @event.articles.each do |article| %>
-        <div class="card-event" data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
-          <h3><strong><%= article.title %></strong></h3>
-          <p class="my-content" data-read-more-target="content"><%= sanitize article.content %></p>
-          <button class="btn btn-warning" data-action="read-more#toggle">Read more</button>
-        </div>
-      <% end %>
+      <div class="article-card">
+        <h2>Articles</h2>
+        <% @event.articles.each do |article| %>
+          <div class="card-event" data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+            <h3><strong><%= article.title %></strong></h3>
+            <p class="my-content" data-read-more-target="content"><%= sanitize article.content %></p>
+            <div class="read-more">
+              <button class="btn btn-warning" data-action="read-more#toggle">Read more</button>
+            </div>
+          </div>
+      </div>
+        <% end %>
     <% else %>
       <%= simple_form_for([@event], url: participations_path(@event), method: :post) do |f| %>
         <%= f.hidden_field :event_id, value: @event.id %>
@@ -24,6 +30,7 @@
         </div>
       <% end %>
     <% end %>
+
   </div>
 <!-- FIN DE LA CONDITION JE VEUX QUE LA CARTE SOIT TOUJOURS VISIBLE -->
   <div class="events-map"
