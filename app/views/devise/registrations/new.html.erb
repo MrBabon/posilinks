@@ -6,22 +6,23 @@
     <%= f.input :nickname,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "Nom d'utilisateur" }%>
+                label: "Nom d'utilisateur" %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                label: "Email" %>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "nouveau mot de passe" } %>
+                hint: ("#{@minimum_password_length} charactères minimum" if @minimum_password_length),
+                label: "Nouveau mot de passe" %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "nouveau mot de passe" } %>
+                label: "Confirmation de mot de passe" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "S'inscrire", class: "btn btn-primary" %>
+  <div class="form-actions button-registration">
+    <%= f.button :submit, "S'inscrire", class: "btn btn-primary button-registration-submit" %>
+    <%= link_to "Se connecter", new_session_path(resource_name)  %>
   </div>
 </div>
 <% end %>
