@@ -14,7 +14,6 @@ class ParticipationsController < ApplicationController
   end
 
   def destroy
-    Rails.logger.info(params)
     @event = Event.find(params[:event_id])
     @participation.destroy
     redirect_to event_path(@event)
