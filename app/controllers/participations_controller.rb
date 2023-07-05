@@ -1,9 +1,12 @@
 class ParticipationsController < ApplicationController
   before_action :set_event, only: :create
 
+  def show
+    
+  end
+
   def create
     @participation = Participation.new(event_params)
-    # @participation.event = @event
     @participation.user = current_user
     @participation.save
     redirect_to event_path(@event)
