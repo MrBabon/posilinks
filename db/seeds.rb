@@ -74,7 +74,7 @@ wwf = Organization.new(
 wwf.photo.attach(io: file_wwf, filename: "wwf.png", content_type: "image/png")
 wwf.save
 
-file_nettoyage = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688638852/nettoyage_de_plage_ekfmxy.jpg")
+file_nettoyage = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688654633/plage_tybb4w.jpg")
 nettoyage = Event.new(
   address: "13 Prom. des Anglais, 06000 Nice",
   title: "Nettoyage de la plage",
@@ -97,7 +97,7 @@ article2 = Article.create!(
   event: nettoyage
 )
 
-file_plantation = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688638852/plantation_d_arbres_btov8l.jpg")
+file_plantation = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688654633/arbre_bncvk1.webp")
 plantation = Event.new(
   address: "2680 Rte de la Revere, 06360 Èze",
   title: "Plantation d'arbres au Parc de la Grande Corniche",
@@ -122,7 +122,7 @@ jardin.save
 file_conference = URI.open("https://res.cloudinary.com/dilp6xqmb/image/upload/v1688640225/confe%CC%81rence_bvfiat.jpg")
 conference = Event.new(
   address: "25 avenue François Mitterrand, 06300 Nice",
-  title: "Conférence sur les enjeux climatiques à l'Université Saint-Jean d'Angély",
+  title: "Conférence sur les enjeux climatiques",
   description: "En partenariat avec l'Université Saint-Jean d'Angély et ses professeurs, une conférence autour des enjeux climatiques aura lieu le 13 juillet de 18h à 20h dans l'Amphithéâtre 1.",
   date: "2023-07-13",
   organization: wwf
