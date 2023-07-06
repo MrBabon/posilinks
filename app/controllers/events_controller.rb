@@ -12,18 +12,6 @@ class EventsController < ApplicationController
     @marker = map_view(@event)
   end
 
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
   private
 
   def map_view(event)

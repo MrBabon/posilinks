@@ -3,24 +3,17 @@
 Rails.application.routes.draw do
   get 'organizations/index'
   get 'organizations/show'
-  get 'organizations/new'
-  get 'organizations/create'
-  get 'organizations/edit'
-  get 'organizations/update'
-  get 'organizations/destroy'
   devise_for :users
   root to: "pages#home"
   resources :organizations do
-    resources :events, only: [:destroy, :index, :show]
-    resources :articles, only: [:destroy]
+    resources :events, only: [:index, :show]
   end
-  resources :articles, except: [:destroy]
-  resources :events, except: [:destroy] do 
+  resources :events, except: [:destroy] do
     resources :participations, only: [:destroy]
   end
   resources :participations, only: [:create]
-  
-  
+
+
   # get 'participations/create'
   # get 'articles/index'
   # get 'articles/show'
