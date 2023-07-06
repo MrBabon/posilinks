@@ -5,8 +5,11 @@
   <div class="events-content">
     <h1><strong><%= @event.title %></strong></h1>
     <p><%= @event.description %></p>
-    <p>Date: <%= @event.date.strftime("%d-%m-%Y") %></p>
-    <p>Adresse: <%= @event.address %></p>
+
+    <div class="article-card event-info">
+    <p><i class="fa-solid fa-calendar-days"></i> <%= @event.date.strftime("%d-%m-%Y") %></p>
+    <p><i class="fa-sharp fa-solid fa-location-dot"></i> <%= @event.address %></p>
+    </div>
 
 
     <% if @participation %>
@@ -14,7 +17,7 @@
         <div class="article-card">
           <h2>Articles</h2>
           <% @event.articles.each do |article| %>
-            <div class="card-event" data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+            <div class="card-event" data-controller="read-more" data-read-more-more-text-value="Lire plus" data-read-more-less-text-value="Lire moins">
               <h3><strong><%= article.title %></strong></h3>
               <p class="my-content" data-read-more-target="content"><%= sanitize article.content %></p>
               <div class="read-more">
@@ -26,7 +29,7 @@
         </div>
       <% end %>
       <div>
-        <%= link_to "Se désinscrire à l'évènement", event_participation_path(@event, @participation), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: "btn btn-warning"%>
+        <%= link_to "Se désinscrire de l'évènement", event_participation_path(@event, @participation), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: "btn btn-warning"%>
       </div>
     <% else %>
       <%= simple_form_for([@event], url: participations_path(@event), method: :post) do |f| %>
@@ -34,7 +37,7 @@
         <div class="form-actions">
           <%= f.button :submit, value: "S'inscrire à l'évènement", class: "btn btn-warning" %>
         </div>
-      <% end %> 
+      <% end %>
     <% end %>
   </div>
   <div class="events-map"
