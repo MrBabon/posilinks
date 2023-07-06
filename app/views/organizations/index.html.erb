@@ -22,7 +22,7 @@
               <% rotation_degrees = index.even? ? 10 : -10 %>
               <div class="event-card" style="transform: rotate(<%= rotation_degrees %>deg);">
                 <h2><%= event.organization.name %></h2>
-                <img src="<%= cl_image_path event.photo.key %>" alt="évènement">
+                <img src="<%= cl_image_path event.photo.key %>" alt="<%= event.title %>">
                 <h2><%= event.title %></h2>
                 <p><%= event.date.strftime("%d-%m-%Y") %></p>
                 <%= link_to event.title, organization_event_path(event.organization, event), class: "button" %>
