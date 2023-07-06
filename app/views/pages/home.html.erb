@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col home-style">
                 <% if user_signed_in? %>
-                    <h2 class="mt-3">Bon retour parmi nous <%= current_user.nickname %> !</h2>
+                    <h2 class="mt-3">Bon retour parmi nous <span class="phrase-couleur"><%= current_user.nickname %></span> !</h2>
 
                     <div class="d-flex mt-5">
                       <%= link_to organizations_path, class:"button" do %>
