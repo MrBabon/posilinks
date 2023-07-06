@@ -15,7 +15,7 @@
               <h3><strong><%= article.title %></strong></h3>
               <p class="my-content" data-read-more-target="content"><%= sanitize article.content %></p>
               <div class="read-more">
-                <button class="btn btn-warning" data-action="read-more#toggle">Lire plus</button>
+                <button class="btn btn-warning" data-action="read-more#toggle">Read more</button>
               </div>
             </div>
             <hr>
@@ -31,7 +31,7 @@
         <div class="form-actions">
           <%= f.button :submit, value: "S'inscrire à l'évènement", class: "btn btn-warning" %>
         </div>
-      <% end %> 
+      <% end %>
     <% end %>
   </div>
   <div class="events-map"
