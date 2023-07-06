@@ -3,7 +3,6 @@ class ParticipationsController < ApplicationController
   before_action :set_participation, only: [:destroy]
 
   def show
-    
   end
 
   def create
@@ -32,5 +31,5 @@ class ParticipationsController < ApplicationController
   def set_event
     @event = Event.find(event_params[:event_id])
   end
-  
+
 end
