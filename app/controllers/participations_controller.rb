@@ -1,8 +1,9 @@
 class ParticipationsController < ApplicationController
   before_action :set_event, only: :create
 
+
   def show
-    
+    @participations = current_user.participations.includes(:event)
   end
 
   def create
@@ -11,6 +12,7 @@ class ParticipationsController < ApplicationController
     @participation.save
     redirect_to event_path(@event)
   end
+
 
   private
 

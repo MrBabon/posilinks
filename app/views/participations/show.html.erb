@@ -1,0 +1,9 @@
+<h2>hello</h2>
+<h1>Participations de <%= current_user.nickname %></h1>
+
+<% @participations.each do |participation| %>
+  <h3><%= participation.event.title %></h3>
+  <p>Date : <%= participation.event.date %></p>
+  <p>Lieu : <%= participation.event.address%></p>
+  <hr>
+<% end %>

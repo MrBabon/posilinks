@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   end
   resources :articles, except: [:destroy]
   resources :events, except: [:destroy]
-  resources :participations, only: [:create]
-  
-  
+  resources :participations, only: [:create, :show]
+
+  # Ajoute cette ligne pour la route vers la participation de l'utilisateur actuel
+  get '/profile', to: 'participations#user_participation', as: 'user_participation'
   # get 'participations/create'
   # get 'articles/index'
   # get 'articles/show'
