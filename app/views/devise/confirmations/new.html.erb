@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Instructions de confirmation • Posilink" %>
+<% content_for :meta_description, "Instructions" %>
+
 <h2>Renvois des instructions de confirmation</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>

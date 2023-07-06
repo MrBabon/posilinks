@@ -1,3 +1,6 @@
+<% content_for :meta_title, "Liste des associations • Posilink" %>
+<% content_for :meta_description, "Rejoigniez nos associations partenaires" %>
+
 <div class="row justify-content-center">
   <div class="col-sm-8 my-5">
     <%= form_with url: organizations_path, method: :get, class: "d-flex barre-recherche shadow-lg rounded-pill mb-4" do %>
@@ -47,7 +50,7 @@
               <button class="bouton-ac " onclick="window.location.href='<%= organization_path(organization) %>'">voir <%= organization.name %> <i class="fa fa-arrow-right"></i></button>
             </div>
           </div>
-        </div>  
+        </div>
       <% end %>
     </div>
   </div>
