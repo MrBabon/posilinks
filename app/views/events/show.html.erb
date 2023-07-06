@@ -9,29 +9,33 @@
     <p>Adresse: <%= @event.address %></p>
 
 
-    <% if Participation.participation_exist?(current_user, @event) %>
-      <h2>Articles</h2>
-      <div class="article-card">
-        <h2>Articles</h2>
-        <% @event.articles.each do |article| %>
-          <div class="card-event" data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
-            <h3><strong><%= article.title %></strong></h3>
-            <p class="my-content" data-read-more-target="content"><%= sanitize article.content %></p>
-            <div class="read-more">
-              <button class="btn btn-warning" data-action="read-more#toggle">Read more</button>
+    <% if @participation %>
+      <% if @event.articles.any? %>
+        <div class="article-card">
+          <h2>Articles</h2>
+          <% @event.articles.each do |article| %>
+            <div class="card-event" data-controller="read-more" data-read-more-more-text-value="Read more" data-read-more-less-text-value="Read less">
+              <h3><strong><%= article.title %></strong></h3>
+              <p class="my-content" data-read-more-target="content"><%= sanitize article.content %></p>
+              <div class="read-more">
+                <button class="btn btn-warning" data-action="read-more#toggle">Lire plus</button>
+              </div>
             </div>
-          </div>
+            <hr>
+          <% end %>
+        </div>
+      <% end %>
+      <div>
+        <%= link_to "Se désinscrire à l'évènement", event_participation_path(@event, @participation), data: {turbo_method: :delete, turbo_confirm: "Vous êtes sûr?"}, class: "btn btn-warning"%>
       </div>
-        <% end %>
     <% else %>
       <%= simple_form_for([@event], url: participations_path(@event), method: :post) do |f| %>
         <%= f.hidden_field :event_id, value: @event.id %>
         <div class="form-actions">
-          <%= f.button :submit %>
+          <%= f.button :submit, value: "S'inscrire à l'évènement", class: "btn btn-warning" %>
         </div>
-      <% end %>
+      <% end %> 
     <% end %>
-
   </div>
   <div class="events-map"
     data-controller="map"

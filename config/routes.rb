@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     resources :articles, only: [:destroy]
   end
   resources :articles, except: [:destroy]
-  resources :events, except: [:destroy]
+  resources :events, except: [:destroy] do 
+    resources :participations, only: [:destroy]
+  end
   resources :participations, only: [:create]
   
   

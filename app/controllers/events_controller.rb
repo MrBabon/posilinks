@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @participation = Participation.participation_for(current_user, @event)
     @marker = map_view(@event)
   end
 
